@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Fund to Token</title>
+  <meta name="description" content="An 88 second explainer: how a regulated fund is tokenised on Redbelly through Tokeniser, step by step.">
+  <meta property="og:title" content="From Fund to Token">
+  <meta property="og:description" content="How a regulated fund is tokenised on Redbelly through Tokeniser, step by step.">
+  <meta property="og:image" content="web/poster.jpg">
+  <link rel="stylesheet" href="brand/tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: #f4f5f6; color: var(--tk-ink);
+      font-family: var(--font-sans); font-size: 17px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header { background: var(--tk-ink); color: #ffffff; }
+    header .wrap { padding-top: 56px; padding-bottom: 120px; }
+    .kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tk-mint); margin: 0 0 12px; }
+    h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 12px; }
+    .lede { font-size: clamp(17px, 2.2vw, 21px); color: #d6d9e0; max-width: 680px; margin: 0; }
+
+    .player { margin-top: -88px; }
+    .frame { background: #000; border-radius: 8px; overflow: hidden; border: 1px solid #2a2d35; aspect-ratio: 16 / 9; }
+    video { display: block; width: 100%; height: 100%; }
+    .switch { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+    .switch button {
+      font: inherit; font-size: 15px; font-weight: 500; cursor: pointer;
+      padding: 8px 14px; border-radius: 4px; border: 1px solid #d9dde2; background: #ffffff; color: var(--tk-ink-2);
+    }
+    .switch button[aria-pressed="true"] { background: var(--tk-ink); border-color: var(--tk-ink); color: #ffffff; }
+    .meta { font-size: 14px; color: var(--tk-muted); margin: 10px 0 0; }
+
+    section { padding: 56px 0 8px; }
+    h2 { font-size: 28px; font-weight: 500; letter-spacing: -0.01em; margin: 0 0 6px; }
+    .sub { color: var(--tk-muted); margin: 0 0 22px; }
+
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    .card {
+      display: block; text-decoration: none; background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px;
+      padding: 18px 20px;
+    }
+    a.card:hover { border-color: var(--tk-ink); }
+    .card .label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-teal); }
+    .card .name { font-size: 18px; font-weight: 500; margin: 4px 0 2px; }
+    .card .info { font-size: 14px; color: var(--tk-muted); }
+
+    ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    ol.steps li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 16px 18px; }
+    .num { width: 36px; height: 36px; border-radius: 18px; background: var(--tk-mint); display: flex; align-items: center; justify-content: center; font-weight: 600; }
+    ol.steps b { font-weight: 500; display: block; font-size: 18px; }
+    ol.steps span { color: var(--tk-ink-2); }
+
+    .checks { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin: 0; padding: 0; list-style: none; }
+    .checks li { background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 14px 16px; display: flex; gap: 10px; }
+    .dot { flex: none; width: 10px; height: 10px; border-radius: 5px; background: var(--tk-teal); margin-top: 8px; }
+
+    .rb { background: var(--rb-navy); color: #f1f5f8; margin-top: 64px; }
+    .rb .wrap { padding-top: 40px; padding-bottom: 40px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; }
+    .rb img { height: 48px; width: auto; }
+    .rb p { margin: 0; color: #c2ced6; max-width: 640px; }
+
+    footer { padding: 28px 0 40px; font-size: 14px; color: var(--tk-muted); }
+    @media (max-width: 600px) {
+      header .wrap { padding-top: 40px; padding-bottom: 96px; }
+      .player { margin-top: -72px; }
+      section { padding-top: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="kicker">Tokenisation explained</p>
+      <h1>From Fund to Token</h1>
+      <p class="lede">How a regulated fund becomes a compliant token on Redbelly Network through Tokeniser, step by step, in 88 seconds.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap player">
+      <div class="frame">
+        <video id="film" controls playsinline preload="metadata" poster="web/poster.jpg">
+          <source src="deliverables/tokenisation-explainer-1080p-captions.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="switch" role="group" aria-label="Video version">
+        <button type="button" data-src="deliverables/tokenisation-explainer-1080p-captions.mp4" data-track="" aria-pressed="true">Captions burned in</button>
+        <button type="button" data-src="deliverables/tokenisation-explainer-1080p-clean.mp4" data-track="deliverables/tokenisation-explainer.vtt" aria-pressed="false">Clean, with subtitle track</button>
+      </div>
+      <p class="meta">1920 x 1080, 30 fps, H.264 MP4, 88.2 seconds. Illustrative example.</p>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>Deliverables</h2>
+        <p class="sub">Everything the brief asks for, ready to download.</p>
+        <div class="grid">
+          <a class="card" href="deliverables/tokenisation-explainer-script.pdf"><div class="label">Script</div><div class="name">Script and fact check, PDF</div><div class="info">Every line with its verbatim source</div></a>
+          <a class="card" href="deliverables/tokenisation-explainer-script.docx"><div class="label">Script</div><div class="name">Script and fact check, Word</div><div class="info">Same content, editable</div></a>
+          <a class="card" href="deliverables/tokenisation-explainer-1080p-captions.mp4" download><div class="label">Video</div><div class="name">Final video, captions burned in</div><div class="info">MP4, 1080p, 30 fps</div></a>
+          <a class="card" href="deliverables/tokenisation-explainer-1080p-clean.mp4" download><div class="label">Video</div><div class="name">Final video, clean</div><div class="info">MP4, 1080p, 30 fps</div></a>
+          <a class="card" href="deliverables/tokenisation-explainer.srt" download><div class="label">Subtitles</div><div class="name">SRT file</div><div class="info">26 captions, word synced</div></a>
+          <a class="card" href="deliverables/tokenisation-explainer.vtt" download><div class="label">Subtitles</div><div class="name">WebVTT file</div><div class="info">For web players</div></a>
+          <a class="card" href="licences/README.md"><div class="label">Licences</div><div class="name">Licence register</div><div class="info">Fonts OFL 1.1, voice model Apache 2.0</div></a>
+          <a class="card" href="animation/index.html#play"><div class="label">Project files</div><div class="name">Live animation source</div><div class="info">Plays in the browser, no sound</div></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>The five steps</h2>
+        <p class="sub">An illustrative Australian wholesale fund, structured as a unit trust, following the process Tokeniser documents in its Knowledge Hub.</p>
+        <ol class="steps">
+          <li><div class="num">1</div><div><b>Legal review</b><span>The trust deed is checked to confirm it allows ownership records on chain. The manager's existing licence covers it. There is no separate tokenisation licence.</span></div></li>
+          <li><div class="num">2</div><div><b>Set the rules</b><span>On Tokeniser, the manager sets who can invest, foreign ownership limits and lock-up periods. The rules are written into the token itself.</span></div></li>
+          <li><div class="num">3</div><div><b>Verify investors</b><span>Identity, anti-money laundering screening and investor classification come first. Until then, no tokens can reach their wallet.</span></div></li>
+          <li><div class="num">4</div><div><b>Issue on Redbelly</b><span>Tokens for their units are issued on Redbelly Network into verified wallets. The register is live from the first token.</span></div></li>
+          <li><div class="num">5</div><div><b>Transfers</b><span>Every transfer is checked against the rules first. Break a rule and it is rejected. Pass and it settles in seconds.</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>How it is checked</h2>
+        <p class="sub">The video, captions and script document are all generated from one script file.</p>
+        <ul class="checks">
+          <li><span class="dot"></span><span>Every claim about Redbelly or Tokeniser is backed by a verbatim quote from the supplied resources.</span></li>
+          <li><span class="dot"></span><span>Captions match the voiceover word for word. On screen text matches the script exactly.</span></li>
+          <li><span class="dot"></span><span>No price talk, investment advice or promises of returns.</span></li>
+          <li><span class="dot"></span><span>Audio at -16 LUFS with a -1.5 dBTP ceiling. Music ducks under every spoken line.</span></li>
+          <li><span class="dot"></span><span>Fonts under the SIL Open Font License, voice model under Apache 2.0, music and graphics original.</span></li>
+          <li><span class="dot"></span><span>Automated QA: 42 of 42 checks pass, including a live re-read of every source quote.</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div class="rb">
+    <div class="wrap">
+      <img src="brand/logos/redbelly-horizontal-negative.svg" alt="Redbelly Network">
+      <p>Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">Illustrative example. General information only, and not financial or legal advice.</div>
+  </footer>
+
+  <script>
+    (function () {
+      var video = document.getElementById('film');
+      var buttons = document.querySelectorAll('.switch button');
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (b.getAttribute('aria-pressed') === 'true') return;
+          buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          var t = video.currentTime, playing = !video.paused;
+          var old = video.querySelector('track');
+          if (old) old.remove();
+          video.src = b.dataset.src;
+          if (b.dataset.track) {
+            var tr = document.createElement('track');
+            tr.kind = 'subtitles'; tr.srclang = 'en'; tr.label = 'English'; tr.src = b.dataset.track; tr.default = true;
+            video.appendChild(tr);
+          }
+          video.addEventListener('loadedmetadata', function once() {
+            video.removeEventListener('loadedmetadata', once);
+            video.currentTime = t;
+            if (b.dataset.track && video.textTracks[0]) video.textTracks[0].mode = 'showing';
+            if (playing) video.play();
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -162,7 +162,7 @@ def main():
             t = re.sub(r"<[^>]+>", " ", t)
         return t
 
-    docs = [(p.relative_to(ROOT).as_posix(), visible(p)) for p in [ROOT / "README.md", *sorted((ROOT / "docs").glob("*.md")),
+    docs = [(p.relative_to(ROOT).as_posix(), visible(p)) for p in [ROOT / "README.md", ROOT / "index.html", *sorted((ROOT / "docs").glob("*.md")),
                                                                   *sorted((ROOT / "licences").glob("*.md")), ROOT / "build" / "script.html"]
             if p.exists() and p.name != "qa-report.md"]
     if files["script DOCX"].exists():
@@ -174,7 +174,7 @@ def main():
     money = [t for t in viewer if MONEY.search(t)]
     check("no price, return or investment advice language in the film", not money, "; ".join(money))
     credit_viewer = [t for t in viewer if CREDIT.search(t)]
-    credit_docs = [n for n, t in docs if n.startswith(("build/", "deliverables")) and CREDIT.search(t)]
+    credit_docs = [n for n, t in docs if n.startswith(("build/", "deliverables", "index.html")) and CREDIT.search(t)]
     check("no personal credit inside the deliverables", not credit_viewer and not credit_docs, ", ".join(credit_viewer + credit_docs))
 
     # 7. Runtime budget

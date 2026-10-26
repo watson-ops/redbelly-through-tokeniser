@@ -16,6 +16,8 @@ Made for the Redbelly DAO Community Task Board. Intended for Tokeniser marketing
 | 3 | Project files | This repository: [`animation/`](animation/), [`audio/`](audio/), [`script/`](script/), [`tools/`](tools/), [`brand/`](brand/) |
 | 4 | Licence proof | [`licences/`](licences/README.md) |
 
+**Web page:** [`index.html`](index.html) at the repository root presents the film, the downloads and the five steps. It is plain static HTML, so any static host (Vercel, Netlify, GitHub Pages) serves it with no build step.
+
 **Video:** 16:9, 1920 x 1080, 30 fps, H.264 High profile MP4, AAC 48 kHz stereo, 88.2 seconds, loudness -16 LUFS with a -1.5 dBTP ceiling.
 
 ## The story
@@ -51,6 +53,9 @@ audio/
   voiceover/   One take per script line, plus the full voice track
   music/       Original music bed and transition sounds
   final_mix.flac  Mixed and loudness normalised soundtrack
+index.html     Web page for the film and downloads (static, no build)
+vercel.json    Serves .md, .srt and .vtt as readable text on Vercel
+web/           Poster image for the web player
 brand/         Design tokens, Readex Pro and JetBrains Mono, official Redbelly logos
 deliverables/  The files to submit
 docs/          Brief and checklist, production plan, brand application, sources, QA report
