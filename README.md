@@ -89,6 +89,7 @@ The full script with timecodes, on screen text and visual notes is in [`script/s
 The film is accurate by construction. One script file drives everything a viewer sees and hears.
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#EAFFF2', 'primaryBorderColor': '#009C9C', 'primaryTextColor': '#343740', 'lineColor': '#5E6270', 'edgeLabelBackground': '#FFFFFF', 'fontSize': '14px'}}}%%
 flowchart LR
     A[Supplied resources<br>13 pages] -->|43 verbatim quotes| B[script/sources.json]
     B --> C[script/script.json<br>single source of truth]
