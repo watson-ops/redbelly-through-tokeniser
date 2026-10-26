@@ -1,0 +1,10 @@
+# Python 3.10 to 3.12 (kokoro does not support 3.13 yet).
+# Install CPU PyTorch first: pip install torch --index-url https://download.pytorch.org/whl/cpu
+kokoro==0.9.4
+misaki==0.9.4
+numpy
+scipy
+soundfile
+python-docx
+# spaCy English model used by misaki for pronunciation:
+# pip install --no-deps https://huggingface.co/spacy/en_core_web_sm/resolve/main/en_core_web_sm-any-py3-none-any.whl

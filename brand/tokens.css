@@ -1,0 +1,50 @@
+/*
+ * Design tokens for the tokenisation explainer.
+ * Tokeniser values are read from tokeniser.com. Redbelly values come from the
+ * Redbelly Network brand kit and brand manual. Radius and spacing follow the
+ * DAO Task Board kit. See docs/brand-application.md for the rules behind each token.
+ */
+
+@font-face {
+  font-family: "Readex Pro";
+  src: url("fonts/ReadexPro-Variable-latin.woff2") format("woff2");
+  font-weight: 160 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Variable-latin.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: block;
+}
+
+:root {
+  /* Tokeniser surfaces */
+  --tk-ink: #343740;
+  --tk-ink-2: #4b4f5d;
+  --tk-muted: #5e6270;
+  --tk-soft: #bdc1cb;
+  --tk-paper: #ffffff;
+  --tk-mist: #f2f2f2;
+  --tk-mint: #a2ffc8;
+  --tk-teal: #009c9c;
+
+  /* Redbelly Network brand kit */
+  --rb-red: #ff5050;
+  --rb-slate: #283a46;
+  --rb-red-2: #fa423c;
+  --rb-navy: #142530;
+  --rb-grey: #848b91;
+  --rb-silver: #dcdcdc;
+  --rb-cloud: #ecebec;
+
+  /* Type */
+  --font-sans: "Readex Pro", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Shape and spacing (DAO Task Board kit) */
+  --radius: 4px;
+  --radius-lg: 8px;
+  --space: 4px;
+}

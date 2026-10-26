@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>From Fund to Token</title>
+  <link rel="stylesheet" href="../brand/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage"></div>
+  <script src="timeline.js"></script>
+  <script src="scenes.js"></script>
+  <script>
+    // Preview: open this file in a browser and add #t=12.5 to the URL to jump to a time,
+    // or #play to play in real time. The renderer calls window.seek(t) directly.
+    (function preview() {
+      const hash = location.hash.slice(1);
+      if (!hash) { window.seek(0); return; }
+      if (hash.startsWith('t=')) { window.seek(parseFloat(hash.slice(2))); return; }
+      if (hash === 'play') {
+        const t0 = performance.now();
+        const tick = () => {
+          const t = (performance.now() - t0) / 1000;
+          window.seek(t);
+          if (t < window.TIMELINE.duration) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+    })();
+  </script>
+</body>
+</html>

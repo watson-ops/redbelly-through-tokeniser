@@ -1,0 +1,148 @@
+# Source Register
+
+Generated from `script/sources.json`. Every claim in the film traces to a quote below, read on 2026-10-26. `python tools/verify.py --online` re-reads each page and confirms every quote is still there, word for word.
+
+## TK-HOME: Tokeniser, home page
+
+https://tokeniser.com
+
+> Give your Australian fund a global edge
+
+> Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol.
+
+> Tokenisation records ownership of financial products and services as digital tokens, and lets you program the rules of the asset.
+
+> Every holder is verified and every transfer checked against the asset's rules, automatically.
+
+> Tokeniser Pty. Ltd. is an Australian company providing compliant asset tokenisation and management solutions.
+
+## TK-ABOUT: Tokeniser, About us
+
+https://tokeniser.com/about
+
+> Tokeniser is a Redbelly Network project: born from research at the University of Sydney and Australian Government Science Agency: CSIRO, and built on infrastructure trusted by leading financial institutions.
+
+## TK-FUNDS: Tokeniser, Solutions: Funds
+
+https://tokeniser.com/solutions/funds
+
+> Two funds can hold the same underlying assets, follow the same investment strategy and generate the same investment return. The difference is what the infrastructure around the fund allows the manager and investors to do.
+
+> Tokeniser works alongside your existing administrators, trustees, custodians and other service providers.
+
+## TK-GS: Tokeniser, Product: Getting started
+
+https://tokeniser.com/product/getting-started
+
+> Built on Redbelly, Australia's public digital token infrastructure and the network chosen by Australia's central bank for its digital currency project.
+
+> Redbelly is a public digital token infrastructure where every participant's identity is verified at the protocol level, so an open network still meets the accountability the sector requires.
+
+## TK-TECH: Tokeniser, Technology
+
+https://tokeniser.com/technology
+
+> Underneath it runs Redbelly Network, Australia's public digital token infrastructure: proven settlement, verified security, and eligibility built into the protocol.
+
+> Redbelly's consensus is proven correct by model checking, which exhaustively checks every reachable state of the protocol.
+
+> The consensus method itself is patented and built from scratch, developed from research at the University of Sydney and CSIRO, Australia's government science agency.
+
+> It has settled a tokenised corporate bond in the Reserve Bank of Australia's pilot wholesale CBDC as part of Project Acacia.
+
+> Compliant issuance and lifecycle of tokenised assets.
+
+> The settlement layer with deterministic finality
+
+## TK-WHY: Tokeniser, Why tokenise
+
+https://tokeniser.com/why-tokenise
+
+> Redbelly Network was the public permissioned chain selected to underpin Project Acacia.
+
+## TK-AC: Tokeniser, Superpowers: Automated compliance
+
+https://tokeniser.com/product/superpowers/automated-compliance
+
+> Investor eligibility, holder limits and transfer restrictions are typically managed through spreadsheets, emails and manual sign-offs.
+
+> Trades that fail a check do not proceed, and every check is logged.
+
+## TK-IS: Tokeniser, Superpowers: Instant settlement
+
+https://tokeniser.com/product/superpowers/instant-settlement
+
+> Move from T+2 to T+0 settlement.
+
+> Every subscription, redemption and transfer remains unsettled for two business days in listed funds, and often longer in private assets.
+
+> On Tokeniser, cash and units are exchanged in a single step and the register updates simultaneously, or the transaction does not proceed.
+
+## TK-RTT: Tokeniser, Superpowers: Real-time transparency
+
+https://tokeniser.com/product/superpowers/real-time-transparency
+
+> Most fund registers are updated after the fact, across several systems that require manual reconciliation.
+
+## KH-FUND: Tokeniser Knowledge Hub, How to tokenise a fund in Australia
+
+https://tokeniser.com/resources/knowledge-hub/australia/how-to-tokenise-a-fund-in-australia
+
+> The process applies broadly across managed investment schemes, unit trusts, unlisted companies, and special purpose vehicles
+
+> Wholesale and retail structures carry different disclosure and compliance obligations.
+
+> The first step in tokenising a fund in Australia is a legal review of the fund's constitutional documents, the trust deed, constitution, or shareholder agreement, to confirm that they permit on-chain ownership records and electronic transfer of interests.
+
+> There is no separate tokenisation licence required in Australia. The fund manager's existing AFSL (or their reliance on an AFSL holder) covers the issuance of tokenised fund interests in the same way it covers traditional interests.
+
+> the compliance rules to be encoded (investor eligibility, transfer restrictions, foreign ownership limits)
+
+> Investors complete digital onboarding, identity verification, investor classification, and wallet setup, before their tokens are issued.
+
+## KH-WORK: Tokeniser Knowledge Hub, How does Tokeniser work?
+
+https://tokeniser.com/resources/knowledge-hub/platform/how-does-tokeniser-work
+
+> Tokeniser works by representing ownership interests in regulated financial assets as digital tokens on Redbelly Network
+
+> The compliance parameters configured at this stage are encoded into the token's smart contract.
+
+> Tokens are minted on Redbelly Network and transferred to the verified investor wallets.
+
+> The cap table is live from the first token issued.
+
+> Every transfer is checked against configured compliance parameters before submission.
+
+> A transfer to an unverified wallet, an ineligible investor, or in breach of a transfer restriction is rejected before processing.
+
+> Compliant transfers settle atomically on Redbelly Network in seconds.
+
+> The fund manager issues tokens through the Tokeniser interface.
+
+## KH-COMP: Tokeniser Knowledge Hub, How does Tokeniser handle investor compliance?
+
+https://tokeniser.com/resources/knowledge-hub/australia/how-tokeniser-handles-investor-compliance
+
+> This covers identity document verification, liveness checking, AML screening against sanctions and politically exposed person lists, and investor classification under the Corporations Act
+
+> Until this process is complete and the investor's wallet is verified, tokens cannot be issued to or transferred into that wallet.
+
+> Foreign ownership limits, lock-up periods, and wholesale investor thresholds are all configurable compliance parameters.
+
+> investor classification under the Corporations Act (wholesale investor status, sophisticated investor status, or other applicable classification)
+
+## RB-AT: Redbelly Network, Asset tokenisation
+
+https://redbelly.network/asset-tokenisation
+
+> Deterministic finality ensures transactions are confirmed once and cannot be reversed, providing certainty for financial markets
+
+> Formally verified consensus eliminates forks and rollbacks, ensuring consistent and reliable execution
+
+## Left out on purpose
+
+- Market size projections, AUM, fee and cost saving figures
+- Transactions per second (the Tokeniser technology page and the Redbelly home page show different figures)
+- Liquidity as a benefit (Tokeniser states tokenisation does not guarantee liquidity)
+- Lower cost of capital, leverage and lending claims

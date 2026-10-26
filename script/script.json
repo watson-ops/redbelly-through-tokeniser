@@ -1,0 +1,693 @@
+{
+  "title": "From Fund to Token",
+  "subtitle": "How a regulated fund is tokenised on Redbelly through Tokeniser",
+  "version": "1.0",
+  "asset": "An Australian wholesale managed fund (unit trust). Illustrative example, not a real fund.",
+  "audience": "People with no crypto background",
+  "runtime_target_seconds": [
+    60,
+    90
+  ],
+  "voice": {
+    "engine": "Kokoro 82M",
+    "voice": "af_heart",
+    "speed": 1.1,
+    "sample_rate": 24000
+  },
+  "scenes": [
+    {
+      "id": "S01",
+      "name": "The fund",
+      "visual": "A fund card: Wholesale fund, Australia, Unit trust. Lines run to four investors, each holding grey unit blocks. A unit register lists each holding. The question appears above: How does it become a token on Redbelly?",
+      "onscreen": [
+        "How does it become a token on Redbelly?",
+        "Wholesale fund",
+        "Australia",
+        "Unit trust",
+        "Investors hold units",
+        "Investor A",
+        "Investor B",
+        "Investor C",
+        "Investor D",
+        "Unit register",
+        "Investor",
+        "Units"
+      ],
+      "lines": [
+        {
+          "id": "L01",
+          "text": "This is a wholesale fund in Australia. Its investors hold units on a register.",
+          "sources": [
+            "KH-FUND"
+          ],
+          "evidence": [
+            {
+              "source": "KH-FUND",
+              "quote": "The process applies broadly across managed investment schemes, unit trusts, unlisted companies, and special purpose vehicles"
+            },
+            {
+              "source": "KH-FUND",
+              "quote": "Wholesale and retail structures carry different disclosure and compliance obligations."
+            }
+          ],
+          "note": "Describes the illustrative asset. Not a claim about Redbelly or Tokeniser."
+        },
+        {
+          "id": "L02",
+          "text": "How does it become a token on Redbelly?",
+          "tts": "How does it become a token on [Redbelly](/ɹˈɛdbˌɛli/)?",
+          "sources": [
+            "TK-HOME"
+          ],
+          "evidence": [
+            {
+              "source": "TK-HOME",
+              "quote": "Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol."
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "How does it become a token on Redbelly?": [
+          "TK-HOME"
+        ],
+        "Wholesale fund": [
+          "KH-FUND"
+        ],
+        "Unit trust": [
+          "KH-FUND"
+        ]
+      }
+    },
+    {
+      "id": "S02",
+      "name": "Today",
+      "visual": "Three separate cards, Registry, Spreadsheets and Emails, drift apart with broken links between them. A Manual checks card appears, then a settlement bar that fills slowly: Settlement: two business days or longer.",
+      "onscreen": [
+        "Today",
+        "Registry",
+        "Spreadsheets",
+        "Emails",
+        "Manual checks",
+        "Settlement: two business days or longer"
+      ],
+      "lines": [
+        {
+          "id": "L03",
+          "text": "Today, registers sit across separate systems, checks are manual, and settlement takes days.",
+          "sources": [
+            "TK-RTT",
+            "TK-AC",
+            "TK-IS"
+          ],
+          "evidence": [
+            {
+              "source": "TK-RTT",
+              "quote": "Most fund registers are updated after the fact, across several systems that require manual reconciliation."
+            },
+            {
+              "source": "TK-AC",
+              "quote": "Investor eligibility, holder limits and transfer restrictions are typically managed through spreadsheets, emails and manual sign-offs."
+            },
+            {
+              "source": "TK-IS",
+              "quote": "Every subscription, redemption and transfer remains unsettled for two business days in listed funds, and often longer in private assets."
+            }
+          ],
+          "note": "\"Settlement takes days\" summarises two business days in listed funds and often longer in private assets."
+        }
+      ],
+      "onscreen_sources": {
+        "Registry": [
+          "TK-RTT"
+        ],
+        "Spreadsheets": [
+          "TK-AC"
+        ],
+        "Emails": [
+          "TK-AC"
+        ],
+        "Manual checks": [
+          "TK-AC"
+        ],
+        "Settlement: two business days or longer": [
+          "TK-IS"
+        ]
+      }
+    },
+    {
+      "id": "S03",
+      "name": "Step 1: Legal review",
+      "visual": "Step tracker, step 1 active. A trust deed is scanned and one clause turns mint: On-chain ownership records permitted. A licence card: Existing AFSL covers it. A card marked with a cross: No separate tokenisation licence.",
+      "onscreen": [
+        "Trust deed",
+        "On-chain ownership records permitted",
+        "Existing AFSL covers it",
+        "Covers issuance of tokenised fund interests",
+        "No separate tokenisation licence"
+      ],
+      "lines": [
+        {
+          "id": "L04",
+          "text": "Step one. A legal review confirms the trust deed allows ownership on chain.",
+          "sources": [
+            "KH-FUND"
+          ],
+          "evidence": [
+            {
+              "source": "KH-FUND",
+              "quote": "The first step in tokenising a fund in Australia is a legal review of the fund's constitutional documents, the trust deed, constitution, or shareholder agreement, to confirm that they permit on-chain ownership records and electronic transfer of interests."
+            }
+          ]
+        },
+        {
+          "id": "L05",
+          "text": "The manager's existing licence covers it. There is no separate tokenisation licence.",
+          "sources": [
+            "KH-FUND"
+          ],
+          "evidence": [
+            {
+              "source": "KH-FUND",
+              "quote": "There is no separate tokenisation licence required in Australia. The fund manager's existing AFSL (or their reliance on an AFSL holder) covers the issuance of tokenised fund interests in the same way it covers traditional interests."
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "Trust deed": [
+          "KH-FUND"
+        ],
+        "On-chain ownership records permitted": [
+          "KH-FUND"
+        ],
+        "Existing AFSL covers it": [
+          "KH-FUND"
+        ],
+        "Covers issuance of tokenised fund interests": [
+          "KH-FUND"
+        ],
+        "No separate tokenisation licence": [
+          "KH-FUND"
+        ]
+      }
+    },
+    {
+      "id": "S04",
+      "name": "Step 2: Set the rules",
+      "visual": "A Tokeniser style Fund setup panel. Three compliance rules switch on as they are named: Investor eligibility (Wholesale), Foreign ownership limit, Lock-up period. The rules fly into a token: Rules written into the token.",
+      "onscreen": [
+        "Tokeniser",
+        "Fund setup",
+        "Compliance rules",
+        "Investor eligibility",
+        "Wholesale",
+        "Foreign ownership limit",
+        "Lock-up period",
+        "Rules written into the token"
+      ],
+      "lines": [
+        {
+          "id": "L06",
+          "text": "Step two. On Tokeniser, the manager sets the rules: who can invest, foreign ownership limits, lock-up periods.",
+          "tts": "Step two. On [Tokeniser](/tˈOkənˌIzəɹ/), the manager sets the rules: who can invest, foreign ownership limits, lock-up periods.",
+          "sources": [
+            "KH-FUND",
+            "KH-COMP"
+          ],
+          "evidence": [
+            {
+              "source": "KH-FUND",
+              "quote": "the compliance rules to be encoded (investor eligibility, transfer restrictions, foreign ownership limits)"
+            },
+            {
+              "source": "KH-COMP",
+              "quote": "Foreign ownership limits, lock-up periods, and wholesale investor thresholds are all configurable compliance parameters."
+            }
+          ]
+        },
+        {
+          "id": "L07",
+          "text": "They are written into the token itself.",
+          "sources": [
+            "KH-WORK"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "The compliance parameters configured at this stage are encoded into the token's smart contract."
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "Compliance rules": [
+          "KH-WORK"
+        ],
+        "Investor eligibility": [
+          "KH-FUND"
+        ],
+        "Wholesale": [
+          "KH-COMP"
+        ],
+        "Foreign ownership limit": [
+          "KH-FUND"
+        ],
+        "Lock-up period": [
+          "KH-COMP"
+        ],
+        "Rules written into the token": [
+          "KH-WORK"
+        ]
+      }
+    },
+    {
+      "id": "S05",
+      "name": "Step 3: Verify investors",
+      "visual": "An investor card ticks Identity, AML screening and Investor classification (Wholesale) as they are named. Their wallet changes to Wallet verified and a token arrives. A second, unverified wallet appears: a token stops at its lock, marked Blocked.",
+      "onscreen": [
+        "Investor",
+        "Digital onboarding",
+        "Identity",
+        "AML screening",
+        "Investor classification",
+        "Wholesale",
+        "Wallet",
+        "0x7a3f…c21e",
+        "0x91be…04d7",
+        "Not verified",
+        "Wallet verified",
+        "Blocked"
+      ],
+      "lines": [
+        {
+          "id": "L08",
+          "text": "Step three. Each investor is verified: identity, anti-money laundering screening, investor classification.",
+          "sources": [
+            "KH-COMP"
+          ],
+          "evidence": [
+            {
+              "source": "KH-COMP",
+              "quote": "This covers identity document verification, liveness checking, AML screening against sanctions and politically exposed person lists, and investor classification under the Corporations Act"
+            }
+          ]
+        },
+        {
+          "id": "L09",
+          "text": "Until then, no tokens can reach their wallet.",
+          "sources": [
+            "KH-COMP"
+          ],
+          "evidence": [
+            {
+              "source": "KH-COMP",
+              "quote": "Until this process is complete and the investor's wallet is verified, tokens cannot be issued to or transferred into that wallet."
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "Digital onboarding": [
+          "KH-FUND"
+        ],
+        "Identity": [
+          "KH-COMP"
+        ],
+        "AML screening": [
+          "KH-COMP"
+        ],
+        "Investor classification": [
+          "KH-COMP"
+        ],
+        "Blocked": [
+          "KH-COMP"
+        ]
+      }
+    },
+    {
+      "id": "S06",
+      "name": "Step 4: Issue on Redbelly",
+      "visual": "The manager presses Issue tokens in Tokeniser. Three tokens pass through the Redbelly Network layer into three verified wallets. The unit register fills row by row and shows a Live status.",
+      "onscreen": [
+        "Tokeniser",
+        "Issue tokens",
+        "Redbelly Network",
+        "0x7a3f…c21e",
+        "0x3c58…9a10",
+        "0x5d2e…b7f4",
+        "Verified",
+        "Unit register",
+        "Live",
+        "Wallet",
+        "Units"
+      ],
+      "lines": [
+        {
+          "id": "L10",
+          "text": "Step four. Tokens for their units are issued on Redbelly Network, into verified wallets.",
+          "tts": "Step four. Tokens for their units are issued on [Redbelly](/ɹˈɛdbˌɛli/) Network, into verified wallets.",
+          "sources": [
+            "KH-WORK"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "Tokeniser works by representing ownership interests in regulated financial assets as digital tokens on Redbelly Network"
+            },
+            {
+              "source": "KH-WORK",
+              "quote": "Tokens are minted on Redbelly Network and transferred to the verified investor wallets."
+            }
+          ]
+        },
+        {
+          "id": "L11",
+          "text": "The register is live from the first token.",
+          "sources": [
+            "KH-WORK"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "The cap table is live from the first token issued."
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "Issue tokens": [
+          "KH-WORK"
+        ],
+        "Redbelly Network": [
+          "KH-WORK"
+        ],
+        "Verified": [
+          "KH-WORK"
+        ],
+        "Live": [
+          "KH-WORK"
+        ]
+      }
+    },
+    {
+      "id": "S07",
+      "name": "Step 5: Transfers",
+      "visual": "Investor A sends a token to a Rule check gate that tests eligibility, ownership limit and lock-up. A transfer towards Investor B, who is not eligible, is rejected and the token returns. A transfer to Investor C passes, shows Settled in seconds, and Register updated.",
+      "onscreen": [
+        "Investor A",
+        "Investor B",
+        "Investor C",
+        "0x7a3f…c21e",
+        "0x91be…04d7",
+        "0x3c58…9a10",
+        "Verified",
+        "Rule check",
+        "Eligibility",
+        "Ownership limit",
+        "Lock-up",
+        "Not eligible",
+        "Rejected: not eligible",
+        "Settled in seconds",
+        "Register updated"
+      ],
+      "lines": [
+        {
+          "id": "L12",
+          "text": "Step five. Every transfer is checked against those rules first.",
+          "sources": [
+            "KH-WORK",
+            "TK-HOME"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "Every transfer is checked against configured compliance parameters before submission."
+            },
+            {
+              "source": "TK-HOME",
+              "quote": "Every holder is verified and every transfer checked against the asset's rules, automatically."
+            }
+          ]
+        },
+        {
+          "id": "L13",
+          "text": "Break a rule, and it is rejected.",
+          "sources": [
+            "KH-WORK",
+            "TK-AC"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "A transfer to an unverified wallet, an ineligible investor, or in breach of a transfer restriction is rejected before processing."
+            },
+            {
+              "source": "TK-AC",
+              "quote": "Trades that fail a check do not proceed, and every check is logged."
+            }
+          ]
+        },
+        {
+          "id": "L14",
+          "text": "Pass, and it settles in seconds.",
+          "sources": [
+            "KH-WORK",
+            "TK-IS"
+          ],
+          "evidence": [
+            {
+              "source": "KH-WORK",
+              "quote": "Compliant transfers settle atomically on Redbelly Network in seconds."
+            },
+            {
+              "source": "TK-IS",
+              "quote": "On Tokeniser, cash and units are exchanged in a single step and the register updates simultaneously, or the transaction does not proceed."
+            }
+          ],
+          "note": "The Knowledge Hub also notes that with placeholder and omnibus wallets, payment and issuance follow their traditional sequence. The line follows the Knowledge Hub's own step 4 wording."
+        }
+      ],
+      "hold_after": 0.8,
+      "onscreen_sources": {
+        "Rule check": [
+          "KH-WORK"
+        ],
+        "Rejected: not eligible": [
+          "KH-WORK"
+        ],
+        "Settled in seconds": [
+          "KH-WORK"
+        ],
+        "Register updated": [
+          "TK-IS"
+        ]
+      }
+    },
+    {
+      "id": "S08",
+      "name": "The Redbelly layer",
+      "visual": "The background turns Redbelly navy and the official Redbelly logo appears. A Tokeniser layer (Issue) sits on a Redbelly Network layer (Settle) drawn as a network of nodes. Six fact cards appear as each fact is spoken.",
+      "onscreen": [
+        "Redbelly Network",
+        "Tokeniser",
+        "Issue",
+        "Settle",
+        "Public digital token infrastructure",
+        "Identity verified at protocol level",
+        "Confirmed transactions cannot be reversed",
+        "Formally verified consensus",
+        "Born from University of Sydney and CSIRO research",
+        "Chosen by Australia's central bank for Project Acacia"
+      ],
+      "lines": [
+        {
+          "id": "L15",
+          "text": "Underneath is Redbelly Network, Australia's public digital token infrastructure.",
+          "tts": "Underneath is [Redbelly](/ɹˈɛdbˌɛli/) Network, Australia's public digital token infrastructure.",
+          "sources": [
+            "TK-HOME",
+            "TK-TECH"
+          ],
+          "evidence": [
+            {
+              "source": "TK-HOME",
+              "quote": "Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol."
+            },
+            {
+              "source": "TK-TECH",
+              "quote": "Underneath it runs Redbelly Network, Australia's public digital token infrastructure: proven settlement, verified security, and eligibility built into the protocol."
+            }
+          ]
+        },
+        {
+          "id": "L16",
+          "text": "Every participant's identity is verified at protocol level, and confirmed transactions cannot be reversed.",
+          "sources": [
+            "TK-GS",
+            "RB-AT"
+          ],
+          "evidence": [
+            {
+              "source": "TK-GS",
+              "quote": "Redbelly is a public digital token infrastructure where every participant's identity is verified at the protocol level, so an open network still meets the accountability the sector requires."
+            },
+            {
+              "source": "RB-AT",
+              "quote": "Deterministic finality ensures transactions are confirmed once and cannot be reversed, providing certainty for financial markets"
+            }
+          ]
+        },
+        {
+          "id": "L17",
+          "text": "Its consensus is formally verified. And Australia's central bank chose Redbelly for Project Acacia.",
+          "tts": "Its consensus is formally verified. And Australia's central bank chose [Redbelly](/ɹˈɛdbˌɛli/) for Project Acacia.",
+          "sources": [
+            "RB-AT",
+            "TK-TECH",
+            "TK-GS",
+            "TK-WHY"
+          ],
+          "evidence": [
+            {
+              "source": "RB-AT",
+              "quote": "Formally verified consensus eliminates forks and rollbacks, ensuring consistent and reliable execution"
+            },
+            {
+              "source": "TK-TECH",
+              "quote": "Redbelly's consensus is proven correct by model checking, which exhaustively checks every reachable state of the protocol."
+            },
+            {
+              "source": "TK-GS",
+              "quote": "Built on Redbelly, Australia's public digital token infrastructure and the network chosen by Australia's central bank for its digital currency project."
+            },
+            {
+              "source": "TK-WHY",
+              "quote": "Redbelly Network was the public permissioned chain selected to underpin Project Acacia."
+            }
+          ],
+          "note": "Combines two Tokeniser statements: Redbelly is the network chosen by Australia's central bank for its digital currency project, and it was selected to underpin Project Acacia."
+        }
+      ],
+      "onscreen_sources": {
+        "Issue": [
+          "TK-TECH"
+        ],
+        "Settle": [
+          "TK-TECH"
+        ],
+        "Public digital token infrastructure": [
+          "TK-HOME",
+          "TK-TECH"
+        ],
+        "Identity verified at protocol level": [
+          "TK-GS"
+        ],
+        "Confirmed transactions cannot be reversed": [
+          "RB-AT"
+        ],
+        "Formally verified consensus": [
+          "RB-AT"
+        ],
+        "Born from University of Sydney and CSIRO research": [
+          "TK-ABOUT",
+          "TK-TECH"
+        ],
+        "Chosen by Australia's central bank for Project Acacia": [
+          "TK-GS",
+          "TK-WHY"
+        ]
+      }
+    },
+    {
+      "id": "S09",
+      "name": "Close",
+      "visual": "Same fund. Same strategy. Same licence. appear word by word. The fund card returns and each investor's grey unit blocks turn into mint tokens: Compliant tokens on Redbelly. End card: Tokeniser, tokeniser.com, Built on Redbelly Network with the official logo, and a general information line.",
+      "onscreen": [
+        "Same fund.",
+        "Same strategy.",
+        "Same licence.",
+        "Wholesale fund",
+        "Australia",
+        "Unit trust",
+        "Investor A",
+        "Investor B",
+        "Investor C",
+        "Investor D",
+        "Compliant tokens on Redbelly",
+        "Tokeniser",
+        "tokeniser.com",
+        "Built on",
+        "Redbelly Network",
+        "Illustrative example. General information only, and not financial or legal advice."
+      ],
+      "lines": [
+        {
+          "id": "L18",
+          "text": "Same fund. Same strategy. Same licence.",
+          "sources": [
+            "TK-FUNDS",
+            "KH-FUND"
+          ],
+          "evidence": [
+            {
+              "source": "TK-FUNDS",
+              "quote": "Two funds can hold the same underlying assets, follow the same investment strategy and generate the same investment return. The difference is what the infrastructure around the fund allows the manager and investors to do."
+            },
+            {
+              "source": "KH-FUND",
+              "quote": "There is no separate tokenisation licence required in Australia. The fund manager's existing AFSL (or their reliance on an AFSL holder) covers the issuance of tokenised fund interests in the same way it covers traditional interests."
+            }
+          ]
+        },
+        {
+          "id": "L19",
+          "text": "Now its units are compliant tokens on Redbelly, through Tokeniser.",
+          "tts": "Now its units are compliant tokens on [Redbelly](/ɹˈɛdbˌɛli/), through [Tokeniser](/tˈOkənˌIzəɹ/).",
+          "sources": [
+            "TK-HOME",
+            "KH-WORK"
+          ],
+          "evidence": [
+            {
+              "source": "TK-HOME",
+              "quote": "Tokeniser Pty. Ltd. is an Australian company providing compliant asset tokenisation and management solutions."
+            },
+            {
+              "source": "KH-WORK",
+              "quote": "Tokeniser works by representing ownership interests in regulated financial assets as digital tokens on Redbelly Network"
+            }
+          ]
+        }
+      ],
+      "onscreen_sources": {
+        "Same strategy.": [
+          "TK-FUNDS"
+        ],
+        "Same licence.": [
+          "KH-FUND"
+        ],
+        "Compliant tokens on Redbelly": [
+          "TK-HOME"
+        ],
+        "Built on": [
+          "TK-GS"
+        ],
+        "tokeniser.com": [
+          "TK-HOME"
+        ]
+      }
+    }
+  ],
+  "persistent_onscreen": {
+    "text": [
+      "Illustrative example",
+      "Legal review",
+      "Set the rules",
+      "Verify investors",
+      "Issue on Redbelly",
+      "Transfers"
+    ],
+    "note": "A tag in the top left corner marks the example as illustrative. A five step tracker runs across the top during steps one to five."
+  }
+}

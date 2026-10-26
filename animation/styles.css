@@ -1,0 +1,85 @@
+/* Layout and component styles for the explainer. Motion lives in scenes.js. */
+
+* { box-sizing: border-box; margin: 0; padding: 0; transition: none !important; animation: none !important; }
+
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--tk-mist); }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--tk-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #f4f5f6; }
+
+.layer, .scene { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.mono { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.01em; }
+
+/* Backgrounds */
+#bgLight { background: radial-gradient(1200px 700px at 78% 18%, #ffffff 0%, #f4f5f6 60%, #eef0f2 100%); }
+#bgDark { background: radial-gradient(1400px 900px at 70% 30%, #1d3442 0%, var(--rb-navy) 55%, #0f1d26 100%); opacity: 0; }
+#bgGrid { opacity: 0.55; }
+
+/* Cards */
+.card {
+  position: absolute;
+  background: var(--tk-paper);
+  border: 1px solid #e1e4e8;
+  border-radius: var(--radius-lg);
+}
+.card.dark { background: #1d3140; border-color: #34444f; color: #f1f5f8; }
+
+.chip {
+  position: absolute;
+  display: flex; align-items: center; gap: 10px;
+  height: 44px; padding: 0 16px;
+  border-radius: var(--radius);
+  font-size: 20px; font-weight: 500;
+  background: #eef0f2; color: var(--tk-ink-2);
+  white-space: nowrap;
+}
+.chip.mint { background: var(--tk-mint); color: var(--tk-ink); }
+.chip.ink { background: var(--tk-ink); color: #ffffff; }
+
+.kicker { font-size: 20px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tk-teal); }
+.h1 { font-size: 64px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.08; }
+.h2 { font-size: 44px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; }
+.h3 { font-size: 30px; font-weight: 500; letter-spacing: -0.01em; }
+.body { font-size: 24px; font-weight: 400; color: var(--tk-ink-2); }
+.small { font-size: 20px; font-weight: 400; color: var(--tk-muted); }
+
+.icon { position: absolute; }
+.icon svg, .ic svg { display: block; }
+
+/* Stepper */
+#stepper { position: absolute; left: 0; right: 0; top: 56px; height: 56px; display: flex; justify-content: center; gap: 14px; }
+.step {
+  position: relative; display: flex; align-items: center; gap: 12px;
+  height: 56px; padding: 0 22px 0 10px; border-radius: 28px;
+  background: #ffffff; border: 1px solid #e1e4e8;
+  font-size: 21px; font-weight: 500; color: var(--tk-muted);
+}
+.step .num {
+  width: 36px; height: 36px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+  background: #eef0f2; color: var(--tk-ink-2); font-size: 18px; font-weight: 600;
+}
+
+/* Illustrative tag */
+#tag { position: absolute; right: 64px; top: 34px; display: flex; align-items: center; gap: 10px; font-size: 18px; color: var(--tk-muted); }
+#tag .dot { width: 8px; height: 8px; border-radius: 4px; background: var(--tk-soft); }
+
+/* Tokens */
+.token { position: absolute; border-radius: 50%; }
+
+/* Register rows */
+.row { position: absolute; left: 0; right: 0; display: flex; align-items: center; }
+.bar { height: 12px; border-radius: 6px; background: #d9dde2; }
+
+/* Status */
+.status { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 500; }
+.status .dot { width: 10px; height: 10px; border-radius: 5px; }
+
+/* End card */
+#endcard { position: absolute; inset: 0; background: var(--tk-ink); }

@@ -1,0 +1,281 @@
+{
+  "captions": [
+    {
+      "line": "L01",
+      "text": "This is a wholesale fund in Australia. Its investors hold units on a register.",
+      "lines": [
+        "This is a wholesale fund in Australia.",
+        "Its investors hold units on a register."
+      ],
+      "start": 0.5,
+      "end": 5.177,
+      "id": "C01"
+    },
+    {
+      "line": "L02",
+      "text": "How does it become a token on Redbelly?",
+      "lines": [
+        "How does it become a token on Redbelly?"
+      ],
+      "start": 5.217,
+      "end": 7.381,
+      "id": "C02"
+    },
+    {
+      "line": "L03",
+      "text": "Today, registers sit across separate systems,",
+      "lines": [
+        "Today, registers sit",
+        "across separate systems,"
+      ],
+      "start": 7.801,
+      "end": 10.262,
+      "id": "C03"
+    },
+    {
+      "line": "L03",
+      "text": "checks are manual, and settlement takes days.",
+      "lines": [
+        "checks are manual, and",
+        "settlement takes days."
+      ],
+      "start": 10.302,
+      "end": 13.06,
+      "id": "C04"
+    },
+    {
+      "line": "L04",
+      "text": "Step one. A legal review confirms the trust deed allows ownership on chain.",
+      "lines": [
+        "Step one. A legal review confirms the",
+        "trust deed allows ownership on chain."
+      ],
+      "start": 13.48,
+      "end": 18.299,
+      "id": "C05"
+    },
+    {
+      "line": "L05",
+      "text": "The manager's existing licence covers it. There is no separate tokenisation licence.",
+      "lines": [
+        "The manager's existing licence covers it.",
+        "There is no separate tokenisation licence."
+      ],
+      "start": 18.339,
+      "end": 23.396,
+      "id": "C06"
+    },
+    {
+      "line": "L06",
+      "text": "Step two. On Tokeniser, the manager sets the rules:",
+      "lines": [
+        "Step two. On Tokeniser,",
+        "the manager sets the rules:"
+      ],
+      "start": 23.816,
+      "end": 27.235,
+      "id": "C07"
+    },
+    {
+      "line": "L06",
+      "text": "who can invest, foreign ownership limits, lock-up periods.",
+      "lines": [
+        "who can invest, foreign ownership",
+        "limits, lock-up periods."
+      ],
+      "start": 27.275,
+      "end": 30.701,
+      "id": "C08"
+    },
+    {
+      "line": "L07",
+      "text": "They are written into the token itself.",
+      "lines": [
+        "They are written into the token itself."
+      ],
+      "start": 30.741,
+      "end": 32.818,
+      "id": "C09"
+    },
+    {
+      "line": "L08",
+      "text": "Step three. Each investor is verified: identity,",
+      "lines": [
+        "Step three. Each investor",
+        "is verified: identity,"
+      ],
+      "start": 33.238,
+      "end": 36.686,
+      "id": "C10"
+    },
+    {
+      "line": "L08",
+      "text": "anti-money laundering screening, investor classification.",
+      "lines": [
+        "anti-money laundering screening,",
+        "investor classification."
+      ],
+      "start": 36.726,
+      "end": 40.073,
+      "id": "C11"
+    },
+    {
+      "line": "L09",
+      "text": "Until then, no tokens can reach their wallet.",
+      "lines": [
+        "Until then, no tokens",
+        "can reach their wallet."
+      ],
+      "start": 40.113,
+      "end": 42.828,
+      "id": "C12"
+    },
+    {
+      "line": "L10",
+      "text": "Step four. Tokens for their units are issued on Redbelly Network,",
+      "lines": [
+        "Step four. Tokens for their units",
+        "are issued on Redbelly Network,"
+      ],
+      "start": 43.248,
+      "end": 47.023,
+      "id": "C13"
+    },
+    {
+      "line": "L10",
+      "text": "into verified wallets.",
+      "lines": [
+        "into verified wallets."
+      ],
+      "start": 47.063,
+      "end": 48.647,
+      "id": "C14"
+    },
+    {
+      "line": "L11",
+      "text": "The register is live from the first token.",
+      "lines": [
+        "The register is live from the first token."
+      ],
+      "start": 48.687,
+      "end": 51.177,
+      "id": "C15"
+    },
+    {
+      "line": "L12",
+      "text": "Step five. Every transfer is checked against those rules first.",
+      "lines": [
+        "Step five. Every transfer is",
+        "checked against those rules first."
+      ],
+      "start": 51.597,
+      "end": 55.064,
+      "id": "C16"
+    },
+    {
+      "line": "L13",
+      "text": "Break a rule, and it is rejected.",
+      "lines": [
+        "Break a rule, and it is rejected."
+      ],
+      "start": 55.104,
+      "end": 57.057,
+      "id": "C17"
+    },
+    {
+      "line": "L14",
+      "text": "Pass, and it settles in seconds.",
+      "lines": [
+        "Pass, and it settles in seconds."
+      ],
+      "start": 57.097,
+      "end": 59.129,
+      "id": "C18"
+    },
+    {
+      "line": "L15",
+      "text": "Underneath is Redbelly Network,",
+      "lines": [
+        "Underneath is Redbelly Network,"
+      ],
+      "start": 60.349,
+      "end": 62.42,
+      "id": "C19"
+    },
+    {
+      "line": "L15",
+      "text": "Australia's public digital token infrastructure.",
+      "lines": [
+        "Australia's public digital",
+        "token infrastructure."
+      ],
+      "start": 62.46,
+      "end": 65.226,
+      "id": "C20"
+    },
+    {
+      "line": "L16",
+      "text": "Every participant's identity is verified at protocol level,",
+      "lines": [
+        "Every participant's identity",
+        "is verified at protocol level,"
+      ],
+      "start": 65.266,
+      "end": 68.829,
+      "id": "C21"
+    },
+    {
+      "line": "L16",
+      "text": "and confirmed transactions cannot be reversed.",
+      "lines": [
+        "and confirmed transactions",
+        "cannot be reversed."
+      ],
+      "start": 68.869,
+      "end": 71.727,
+      "id": "C22"
+    },
+    {
+      "line": "L17",
+      "text": "Its consensus is formally verified.",
+      "lines": [
+        "Its consensus is formally verified."
+      ],
+      "start": 71.767,
+      "end": 74.18,
+      "id": "C23"
+    },
+    {
+      "line": "L17",
+      "text": "And Australia's central bank chose Redbelly for Project Acacia.",
+      "lines": [
+        "And Australia's central bank",
+        "chose Redbelly for Project Acacia."
+      ],
+      "start": 74.22,
+      "end": 77.999,
+      "id": "C24"
+    },
+    {
+      "line": "L18",
+      "text": "Same fund. Same strategy. Same licence.",
+      "lines": [
+        "Same fund. Same strategy. Same licence."
+      ],
+      "start": 78.419,
+      "end": 81.076,
+      "id": "C25"
+    },
+    {
+      "line": "L19",
+      "text": "Now its units are compliant tokens on Redbelly, through Tokeniser.",
+      "lines": [
+        "Now its units are compliant tokens",
+        "on Redbelly, through Tokeniser."
+      ],
+      "start": 81.116,
+      "end": 85.076,
+      "id": "C26"
+    }
+  ]
+}

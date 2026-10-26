@@ -1,0 +1,120 @@
+1
+00:00:00,500 --> 00:00:05,177
+This is a wholesale fund in Australia.
+Its investors hold units on a register.
+
+2
+00:00:05,217 --> 00:00:07,381
+How does it become a token on Redbelly?
+
+3
+00:00:07,801 --> 00:00:10,262
+Today, registers sit
+across separate systems,
+
+4
+00:00:10,302 --> 00:00:13,060
+checks are manual, and
+settlement takes days.
+
+5
+00:00:13,480 --> 00:00:18,299
+Step one. A legal review confirms the
+trust deed allows ownership on chain.
+
+6
+00:00:18,339 --> 00:00:23,396
+The manager's existing licence covers it.
+There is no separate tokenisation licence.
+
+7
+00:00:23,816 --> 00:00:27,235
+Step two. On Tokeniser,
+the manager sets the rules:
+
+8
+00:00:27,275 --> 00:00:30,701
+who can invest, foreign ownership
+limits, lock-up periods.
+
+9
+00:00:30,741 --> 00:00:32,818
+They are written into the token itself.
+
+10
+00:00:33,238 --> 00:00:36,686
+Step three. Each investor
+is verified: identity,
+
+11
+00:00:36,726 --> 00:00:40,073
+anti-money laundering screening,
+investor classification.
+
+12
+00:00:40,113 --> 00:00:42,828
+Until then, no tokens
+can reach their wallet.
+
+13
+00:00:43,248 --> 00:00:47,023
+Step four. Tokens for their units
+are issued on Redbelly Network,
+
+14
+00:00:47,063 --> 00:00:48,647
+into verified wallets.
+
+15
+00:00:48,687 --> 00:00:51,177
+The register is live from the first token.
+
+16
+00:00:51,597 --> 00:00:55,064
+Step five. Every transfer is
+checked against those rules first.
+
+17
+00:00:55,104 --> 00:00:57,057
+Break a rule, and it is rejected.
+
+18
+00:00:57,097 --> 00:00:59,129
+Pass, and it settles in seconds.
+
+19
+00:01:00,349 --> 00:01:02,420
+Underneath is Redbelly Network,
+
+20
+00:01:02,460 --> 00:01:05,226
+Australia's public digital
+token infrastructure.
+
+21
+00:01:05,266 --> 00:01:08,829
+Every participant's identity
+is verified at protocol level,
+
+22
+00:01:08,869 --> 00:01:11,727
+and confirmed transactions
+cannot be reversed.
+
+23
+00:01:11,767 --> 00:01:14,180
+Its consensus is formally verified.
+
+24
+00:01:14,220 --> 00:01:17,999
+And Australia's central bank
+chose Redbelly for Project Acacia.
+
+25
+00:01:18,419 --> 00:01:21,076
+Same fund. Same strategy. Same licence.
+
+26
+00:01:21,116 --> 00:01:25,076
+Now its units are compliant tokens
+on Redbelly, through Tokeniser.
