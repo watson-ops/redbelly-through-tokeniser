@@ -8,6 +8,7 @@ Writes deliverables/tokenisation-explainer-script.docx
 """
 
 import base64
+from datetime import datetime, timezone
 import html
 import json
 from pathlib import Path
@@ -250,6 +251,7 @@ def build_docx():
     doc.core_properties.author = ""
     doc.core_properties.last_modified_by = ""
     doc.core_properties.comments = ""
+    doc.core_properties.created = doc.core_properties.modified = datetime.now(timezone.utc).replace(microsecond=0)
 
     para(doc, "SCRIPT FOR FACT CHECK", size=8, bold=True, color=TEAL)
     para(doc, SCRIPT["title"], size=26)

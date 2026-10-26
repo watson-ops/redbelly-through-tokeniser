@@ -21,8 +21,8 @@ import soundfile as sf
 
 ROOT = Path(__file__).resolve().parent.parent
 SR = 48000
-MUSIC_UNDER_VOICE_LU = 14.0   # music level below the voice before ducking
-DUCK_DB = -7.0                # extra reduction while someone is speaking
+MUSIC_UNDER_VOICE_LU = 11.0   # music level below the voice before ducking
+DUCK_DB = -6.0                # extra reduction while someone is speaking
 SFX_OVER_MUSIC_DB = 3.0
 TARGET = {"I": -16.0, "TP": -1.5, "LRA": 11.0}
 

@@ -51,7 +51,7 @@ Kokoro returns a timestamp for every word. The animation uses those timestamps a
 
 - An original bed generated in code: a soft four chord pad (D major 9, B minor 9, G major 9, A6 sus2) at 84 BPM, a low sine bass and a quiet eighth note arpeggio during the five steps.
 - Transition swells made from filtered noise, and three soft chimes: wallet verified, transfer settled, end card.
-- The music ducks 7 dB under every spoken line. The final mix is normalised to -16 LUFS integrated with a -1.5 dBTP ceiling.
+- The music sits 11 LU under the voice and ducks a further 6 dB under every spoken line. The final mix is normalised to -16 LUFS integrated with a -1.5 dBTP ceiling.
 
 ## 6. Visual approach
 
