@@ -12,15 +12,16 @@
 </p>
 
 <p align="center">
-  <a href="deliverables/tokenisation-explainer-1080p-captions.mp4"><b>Watch the film</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="deliverables/tokenisation-explainer-script.pdf"><b>Read the script</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#deliverables"><b>Deliverables</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="docs/sources.md"><b>Sources</b></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="docs/qa-report.md"><b>QA report</b></a>
+  <a href="deliverables/tokenisation-explainer-1080p-captions.mp4"><img src="web/buttons/watch-the-film.svg" alt="Watch the film" height="48"></a>
+  &nbsp;
+  <a href="deliverables/tokenisation-explainer-script.pdf"><img src="web/buttons/read-the-script.svg" alt="Read the script" height="48"></a>
+</p>
+
+<p align="center">
+  <a href="#deliverables"><img src="web/buttons/deliverables.svg" alt="Deliverables" height="40"></a>
+  <a href="docs/sources.md"><img src="web/buttons/sources.svg" alt="Sources" height="40"></a>
+  <a href="docs/qa-report.md"><img src="web/buttons/qa-report.svg" alt="QA report" height="40"></a>
+  <a href="licences/README.md"><img src="web/buttons/licences.svg" alt="Licences" height="40"></a>
 </p>
 
 <br>
@@ -50,9 +51,9 @@ Made for the Redbelly DAO Community Task Board, for use in Tokeniser marketing, 
 
 | | Deliverable | Files | Format |
 |:-:|---|---|---|
-| 1 | **Script** for fact checking | [PDF](deliverables/tokenisation-explainer-script.pdf) · [Word](deliverables/tokenisation-explainer-script.docx) | Line by line voiceover, on screen text, visuals and verbatim sources |
-| 2 | **Final video**, captions burned in | [MP4](deliverables/tokenisation-explainer-1080p-captions.mp4) | 1920 x 1080, 30 fps, H.264, AAC 48 kHz |
-| 2 | **Final video**, clean | [MP4](deliverables/tokenisation-explainer-1080p-clean.mp4) · [SRT](deliverables/tokenisation-explainer.srt) · [VTT](deliverables/tokenisation-explainer.vtt) | Same master without captions, plus subtitle files |
+| 1 | **Script** for fact checking | <a href="deliverables/tokenisation-explainer-script.pdf"><img src="web/buttons/file-pdf.svg" alt="PDF" height="28"></a> <a href="deliverables/tokenisation-explainer-script.docx"><img src="web/buttons/file-docx.svg" alt="DOCX" height="28"></a> | Line by line voiceover, on screen text, visuals and verbatim sources |
+| 2 | **Final video**, captions burned in | <a href="deliverables/tokenisation-explainer-1080p-captions.mp4"><img src="web/buttons/file-mp4.svg" alt="MP4" height="28"></a> | 1920 x 1080, 30 fps, H.264, AAC 48 kHz |
+| 2 | **Final video**, clean | <a href="deliverables/tokenisation-explainer-1080p-clean.mp4"><img src="web/buttons/file-mp4.svg" alt="MP4" height="28"></a> <a href="deliverables/tokenisation-explainer.srt"><img src="web/buttons/file-srt.svg" alt="SRT" height="28"></a> <a href="deliverables/tokenisation-explainer.vtt"><img src="web/buttons/file-vtt.svg" alt="VTT" height="28"></a> | Same master without captions, plus subtitle files |
 | 3 | **Project files** | [`animation/`](animation/) · [`audio/`](audio/) · [`script/`](script/) · [`tools/`](tools/) · [`brand/`](brand/) | Full source, rebuilds the film from scratch |
 | 4 | **Licence proof** | [`licences/`](licences/README.md) | OFL 1.1 for both fonts, Apache 2.0 for the voice model, brand kit record |
 
@@ -167,6 +168,7 @@ To preview the animation without rendering, open [`animation/index.html`](animat
 | Encode | `python tools/encode_video.py --frames build/frames --captions build/captions` | `deliverables/*.mp4`, `.srt`, `.vtt` |
 | Script document | `python tools/build_script_doc.py` then `node tools/html_to_pdf.js build/script.html deliverables/tokenisation-explainer-script.pdf` | PDF, DOCX, `script/script.md`, `docs/sources.md` |
 | Logo | `python tools/build_logo.py` (needs fonttools, brotli, uharfbuzz) | `web/logo-light.svg`, `web/logo-dark.svg`, `web/mark.svg` |
+| README buttons | `python tools/build_readme_buttons.py` | `web/buttons/*.svg` |
 | README images | `node tools/build_readme_media.js` | `web/readme-banner.png`, `web/readme-storyboard.png` |
 | Verify | `python tools/verify.py [--online]` | `docs/qa-report.md` |
 
