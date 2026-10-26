@@ -55,7 +55,7 @@ audio/
   final_mix.flac  Mixed and loudness normalised soundtrack
 index.html     Web page for the film and downloads (static, no build)
 vercel.json    Serves .md, .srt and .vtt as readable text on Vercel
-web/           Poster image for the web player
+web/           Project logo (SVG, transparent) and poster image for the web page
 brand/         Design tokens, Readex Pro and JetBrains Mono, official Redbelly logos
 deliverables/  The files to submit
 docs/          Brief and checklist, production plan, brand application, sources, QA report
@@ -93,6 +93,7 @@ Each step can also run on its own:
 | Mix | `python tools/mix_audio.py` | `audio/final_mix.flac` |
 | Encode | `python tools/encode_video.py --frames build/frames --captions build/captions` | `deliverables/*.mp4`, `.srt`, `.vtt` |
 | Script document | `python tools/build_script_doc.py` then `node tools/html_to_pdf.js build/script.html deliverables/tokenisation-explainer-script.pdf` | PDF, DOCX, `script/script.md`, `docs/sources.md` |
+| Logo | `python tools/build_logo.py` (needs fonttools, brotli, uharfbuzz) | `web/logo-light.svg`, `web/logo-dark.svg`, `web/mark.svg` |
 | Verify | `python tools/verify.py [--online]` | `docs/qa-report.md` |
 
 ## Brand

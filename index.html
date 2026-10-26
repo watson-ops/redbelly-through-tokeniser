@@ -3,166 +3,409 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>From Fund to Token</title>
-  <meta name="description" content="An 88 second explainer: how a regulated fund is tokenised on Redbelly through Tokeniser, step by step.">
+  <title>From Fund to Token | Tokenisation on Redbelly through Tokeniser</title>
+  <meta name="description" content="An 88 second explainer: how a regulated fund becomes a compliant token on Redbelly Network through Tokeniser, in five steps.">
+  <meta name="theme-color" content="#343740">
   <meta property="og:title" content="From Fund to Token">
-  <meta property="og:description" content="How a regulated fund is tokenised on Redbelly through Tokeniser, step by step.">
+  <meta property="og:description" content="How a regulated fund becomes a compliant token on Redbelly Network through Tokeniser, in five steps.">
   <meta property="og:image" content="web/poster.jpg">
+  <link rel="icon" href="web/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="brand/tokens.css">
   <style>
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
       margin: 0; background: #f4f5f6; color: var(--tk-ink);
-      font-family: var(--font-sans); font-size: 17px; line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
+      font-family: var(--font-sans); font-size: 17px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     }
-    a { color: inherit; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    img, svg, video { display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .ic { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
-    header { background: var(--tk-ink); color: #ffffff; }
-    header .wrap { padding-top: 56px; padding-bottom: 120px; }
-    .kicker { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tk-mint); margin: 0 0 12px; }
-    h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 12px; }
-    .lede { font-size: clamp(17px, 2.2vw, 21px); color: #d6d9e0; max-width: 680px; margin: 0; }
+    /* Navigation */
+    .nav { position: sticky; top: 0; z-index: 20; background: rgba(52, 55, 64, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .nav .wrap { height: 72px; display: flex; align-items: center; gap: 32px; }
+    .brand img { height: 32px; width: auto; }
+    .links { display: flex; gap: 28px; margin-left: 16px; }
+    .links a { color: #c9ccd4; font-size: 15px; font-weight: 500; }
+    .links a:hover { color: #ffffff; }
+    .nav-right { margin-left: auto; display: flex; align-items: center; gap: 24px; }
+    .built { display: flex; align-items: center; gap: 10px; color: #9ea3ae; font-size: 13px; }
+    .built img { height: 22px; width: auto; }
 
-    .player { margin-top: -88px; }
-    .frame { background: #000; border-radius: 8px; overflow: hidden; border: 1px solid #2a2d35; aspect-ratio: 16 / 9; }
-    video { display: block; width: 100%; height: 100%; }
-    .switch { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
-    .switch button {
-      font: inherit; font-size: 15px; font-weight: 500; cursor: pointer;
-      padding: 8px 14px; border-radius: 4px; border: 1px solid #d9dde2; background: #ffffff; color: var(--tk-ink-2);
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px;
+      border-radius: 6px; font-size: 16px; font-weight: 500; border: 1px solid transparent; cursor: pointer;
+      font-family: inherit; white-space: nowrap; transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-    .switch button[aria-pressed="true"] { background: var(--tk-ink); border-color: var(--tk-ink); color: #ffffff; }
-    .meta { font-size: 14px; color: var(--tk-muted); margin: 10px 0 0; }
+    .btn-mint { background: var(--tk-mint); color: var(--tk-ink); }
+    .btn-mint:hover { background: #8df0b5; }
+    .btn-line { border-color: rgba(255, 255, 255, 0.35); color: #ffffff; }
+    .btn-line:hover { border-color: #ffffff; }
+    .btn-sm { height: 40px; padding: 0 16px; font-size: 15px; }
+    .btn-ghost { border-color: #d6dae0; color: var(--tk-ink); background: #ffffff; }
+    .btn-ghost:hover { border-color: var(--tk-ink); }
 
-    section { padding: 56px 0 8px; }
-    h2 { font-size: 28px; font-weight: 500; letter-spacing: -0.01em; margin: 0 0 6px; }
-    .sub { color: var(--tk-muted); margin: 0 0 22px; }
-
-    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
-    .card {
-      display: block; text-decoration: none; background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px;
-      padding: 18px 20px;
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden; color: #ffffff;
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(162, 255, 200, 0.16), transparent 60%),
+        radial-gradient(700px 500px at -10% 110%, rgba(0, 156, 156, 0.18), transparent 60%),
+        var(--tk-ink);
     }
-    a.card:hover { border-color: var(--tk-ink); }
-    .card .label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-teal); }
-    .card .name { font-size: 18px; font-weight: 500; margin: 4px 0 2px; }
-    .card .info { font-size: 14px; color: var(--tk-muted); }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1.2px, transparent 1.5px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+    }
+    .hero .wrap { position: relative; padding-top: 88px; padding-bottom: 176px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 64px; align-items: end; }
+    .pill { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.12); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #dfe2e8; }
+    .pill i { width: 8px; height: 8px; border-radius: 4px; background: var(--tk-mint); box-shadow: 0 0 0 4px rgba(162, 255, 200, 0.18); }
+    h1 { font-size: clamp(42px, 6.2vw, 76px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.02; margin: 22px 0 22px; }
+    h1 em { font-style: normal; color: var(--tk-mint); }
+    .lede { font-size: clamp(18px, 1.8vw, 21px); line-height: 1.55; color: #d3d6de; max-width: 600px; margin: 0 0 34px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; }
+    .stat { background: rgba(52, 55, 64, 0.85); padding: 22px 24px; }
+    .stat b { display: block; font-size: 40px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; }
+    .stat span { font-size: 14px; color: #aeb3bd; }
 
-    ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-    ol.steps li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 16px 18px; }
-    .num { width: 36px; height: 36px; border-radius: 18px; background: var(--tk-mint); display: flex; align-items: center; justify-content: center; font-weight: 600; }
-    ol.steps b { font-weight: 500; display: block; font-size: 18px; }
-    ol.steps span { color: var(--tk-ink-2); }
+    /* Film */
+    .film { margin-top: -120px; position: relative; z-index: 2; }
+    .film-card { display: grid; grid-template-columns: 1fr 300px; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(20, 37, 48, 0.45), 0 0 0 1px rgba(20, 37, 48, 0.06); }
+    .screen { background: #0f1115; aspect-ratio: 16 / 9; }
+    .screen video { width: 100%; height: 100%; object-fit: contain; background: #0f1115; }
+    .chapters { border-left: 1px solid #eceef1; display: flex; flex-direction: column; min-height: 0; }
+    .chapters h3 { margin: 0; padding: 18px 20px 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-muted); }
+    .chapters ol { list-style: none; margin: 0; padding: 0 8px 8px; overflow: auto; }
+    .chapters button {
+      width: 100%; display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: baseline; text-align: left;
+      padding: 9px 12px; border: 0; border-radius: 6px; background: transparent; cursor: pointer;
+      font: inherit; font-size: 15px; color: var(--tk-ink-2);
+    }
+    .chapters button:hover { background: #f4f5f6; }
+    .chapters button.on { background: #eafff2; color: var(--tk-ink); box-shadow: inset 3px 0 0 var(--tk-teal); }
+    .chapters time { font-family: var(--font-mono); font-size: 13px; color: var(--tk-muted); }
+    .film-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; }
+    .seg { display: inline-flex; padding: 4px; background: #e9ebee; border-radius: 8px; }
+    .seg button { font: inherit; font-size: 14px; font-weight: 500; padding: 8px 14px; border: 0; border-radius: 6px; background: transparent; color: var(--tk-ink-2); cursor: pointer; }
+    .seg button[aria-pressed="true"] { background: #ffffff; color: var(--tk-ink); box-shadow: 0 1px 2px rgba(20, 37, 48, 0.12); }
+    .spec { font-size: 14px; color: var(--tk-muted); }
 
-    .checks { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin: 0; padding: 0; list-style: none; }
-    .checks li { background: #ffffff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 14px 16px; display: flex; gap: 10px; }
-    .dot { flex: none; width: 10px; height: 10px; border-radius: 5px; background: var(--tk-teal); margin-top: 8px; }
+    /* Sections */
+    section { padding: 104px 0 0; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tk-teal); margin: 0 0 12px; }
+    h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 14px; max-width: 760px; }
+    .intro { color: var(--tk-ink-2); font-size: 18px; max-width: 680px; margin: 0 0 44px; }
 
-    .rb { background: var(--rb-navy); color: #f1f5f8; margin-top: 64px; }
-    .rb .wrap { padding-top: 40px; padding-bottom: 40px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; }
-    .rb img { height: 48px; width: auto; }
-    .rb p { margin: 0; color: #c2ced6; max-width: 640px; }
+    /* Steps */
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; counter-reset: s; }
+    .steps::before { content: ""; position: absolute; left: 10%; right: 10%; top: 47px; height: 2px; background: linear-gradient(90deg, var(--tk-mint), #d7f7e5); }
+    .step { position: relative; background: #ffffff; border: 1px solid #e3e6ea; border-radius: 10px; padding: 24px 22px 26px; }
+    .step .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .step .n { width: 46px; height: 46px; border-radius: 23px; background: var(--tk-mint); color: var(--tk-ink); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 17px; box-shadow: 0 0 0 6px #ffffff; }
+    .step .top .ic { color: var(--tk-ink-2); width: 26px; height: 26px; }
+    .step h3 { font-size: 19px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em; }
+    .step p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--tk-ink-2); }
 
-    footer { padding: 28px 0 40px; font-size: 14px; color: var(--tk-muted); }
-    @media (max-width: 600px) {
-      header .wrap { padding-top: 40px; padding-bottom: 96px; }
-      .player { margin-top: -72px; }
-      section { padding-top: 44px; }
+    /* Downloads */
+    .groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .group { background: #ffffff; border: 1px solid #e3e6ea; border-radius: 12px; padding: 8px; }
+    .group h3 { margin: 0; padding: 16px 16px 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-muted); }
+    .file { display: grid; grid-template-columns: 44px 1fr 22px; gap: 14px; align-items: center; padding: 12px 14px; border-radius: 8px; }
+    .file:hover { background: #f4f5f6; }
+    .file .tile { width: 44px; height: 44px; border-radius: 8px; background: #eef0f2; display: flex; align-items: center; justify-content: center; color: var(--tk-ink-2); }
+    .file.primary .tile { background: var(--tk-mint); color: var(--tk-ink); }
+    .file b { display: block; font-weight: 500; font-size: 16px; line-height: 1.3; }
+    .file span { font-size: 13px; color: var(--tk-muted); }
+    .file .go { color: #9aa0aa; width: 20px; height: 20px; }
+    .file:hover .go { color: var(--tk-ink); }
+
+    /* Accuracy */
+    .accuracy { margin-top: 104px; background: var(--tk-ink); color: #ffffff; position: relative; overflow: hidden; }
+    .accuracy::after { content: ""; position: absolute; right: -200px; top: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(162, 255, 200, 0.12), transparent 65%); pointer-events: none; }
+    .accuracy .wrap { position: relative; z-index: 1; padding-top: 96px; padding-bottom: 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .accuracy .eyebrow { color: var(--tk-mint); }
+    .accuracy .intro { color: #c9ccd4; margin-bottom: 30px; }
+    .checklist { list-style: none; margin: 0 0 34px; padding: 0; display: grid; gap: 14px; }
+    .checklist li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; color: #e6e8ec; }
+    .checklist .ic { color: var(--tk-mint); width: 22px; height: 22px; margin-top: 2px; }
+    .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .tile-stat { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 26px 26px 24px; }
+    .tile-stat b { display: block; font-size: 46px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px; }
+    .tile-stat b small { font-size: 22px; color: #9ea3ae; font-weight: 400; }
+    .tile-stat span { color: #c3c7cf; font-size: 15px; }
+    .accuracy .cta .btn-line { height: 44px; font-size: 15px; }
+
+    /* Redbelly band */
+    .rb { background: var(--rb-navy); color: #f1f5f8; }
+    .rb .wrap { padding-top: 64px; padding-bottom: 64px; display: grid; grid-template-columns: auto 1fr auto; gap: 48px; align-items: center; }
+    .rb img { height: 52px; width: auto; }
+    .rb blockquote { margin: 0; font-size: 20px; line-height: 1.5; color: #dfe5ea; max-width: 640px; }
+    .rb cite { display: block; margin-top: 8px; font-style: normal; font-size: 13px; color: #8fa1ad; }
+
+    /* Footer */
+    footer { background: #ffffff; border-top: 1px solid #e3e6ea; }
+    footer .wrap { padding-top: 40px; padding-bottom: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
+    footer img { height: 28px; width: auto; }
+    footer p { margin: 0; font-size: 14px; color: var(--tk-muted); max-width: 560px; }
+    footer nav { display: flex; gap: 22px; font-size: 14px; color: var(--tk-ink-2); }
+    footer nav a:hover { color: var(--tk-ink); }
+
+    /* Reveal on scroll, only when JavaScript runs and motion is welcome */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .js .reveal.in { opacity: 1; transform: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .links { display: none; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; padding-bottom: 160px; }
+      .film-card { grid-template-columns: 1fr; }
+      .chapters { border-left: 0; border-top: 1px solid #eceef1; }
+      .chapters ol { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .steps::before { display: none; }
+      .groups { grid-template-columns: 1fr; }
+      .accuracy .wrap { grid-template-columns: 1fr; gap: 44px; }
+      .rb .wrap { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 18px; }
+      .nav .wrap { height: 64px; gap: 12px; }
+      .brand img { height: 26px; }
+      .built { display: none; }
+      .nav .btn-sm { height: 36px; padding: 0 12px; font-size: 14px; }
+      .hero .wrap { padding-top: 56px; padding-bottom: 120px; }
+      .stat { padding: 18px; }
+      .stat b { font-size: 32px; }
+      .film { margin-top: -84px; }
+      .film-card { border-radius: 10px; }
+      .steps { grid-template-columns: 1fr; }
+      section { padding-top: 76px; }
+      .accuracy { margin-top: 76px; }
+      .accuracy .wrap { padding-top: 72px; padding-bottom: 72px; }
+      .tile-stat { padding: 20px; }
+      .tile-stat b { font-size: 36px; }
+    }
+    @media (max-width: 400px) {
+      .brand img { height: 22px; }
+      .cta .btn { flex: 1 1 100%; justify-content: center; }
     }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <header>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></symbol>
+    <symbol id="i-cc" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10.5 10.2a2.2 2.2 0 1 0 0 3.6M17 10.2a2.2 2.2 0 1 0 0 3.6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-rules" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 21c0-4.2 3.1-6.8 7-6.8 1.4 0 2.7.3 3.8.9"/><path d="M15 18l2 2 4-4.5"/></symbol>
+    <symbol id="i-token" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 10.2l1.8 1.8-1.8 1.8-1.8-1.8z"/></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><path d="M4 8h13M13 4l4 4-4 4M20 16H7M11 12l-4 4 4 4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M5 20h14M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+  </svg>
+
+  <header class="nav">
     <div class="wrap">
-      <p class="kicker">Tokenisation explained</p>
-      <h1>From Fund to Token</h1>
-      <p class="lede">How a regulated fund becomes a compliant token on Redbelly Network through Tokeniser, step by step, in 88 seconds.</p>
+      <a class="brand" href="#top" aria-label="From Fund to Token, home"><img src="web/logo-light.svg" alt="From Fund to Token" width="260" height="32"></a>
+      <nav class="links" aria-label="Sections">
+        <a href="#film">Film</a>
+        <a href="#steps">Steps</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#accuracy">Accuracy</a>
+      </nav>
+      <div class="nav-right">
+        <div class="built">Built on <img src="brand/logos/redbelly-horizontal-negative.svg" alt="Redbelly Network" width="79" height="22"></div>
+        <a class="btn btn-mint btn-sm" href="deliverables/tokenisation-explainer-script.pdf">Get the script</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <div class="wrap player">
-      <div class="frame">
-        <video id="film" controls playsinline preload="metadata" poster="web/poster.jpg">
-          <source src="deliverables/tokenisation-explainer-1080p-captions.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="switch" role="group" aria-label="Video version">
-        <button type="button" data-src="deliverables/tokenisation-explainer-1080p-captions.mp4" data-track="" aria-pressed="true">Captions burned in</button>
-        <button type="button" data-src="deliverables/tokenisation-explainer-1080p-clean.mp4" data-track="deliverables/tokenisation-explainer.vtt" aria-pressed="false">Clean, with subtitle track</button>
-      </div>
-      <p class="meta">1920 x 1080, 30 fps, H.264 MP4, 88.2 seconds. Illustrative example.</p>
-    </div>
-
-    <section>
+  <main id="top">
+    <div class="hero">
       <div class="wrap">
-        <h2>Deliverables</h2>
-        <p class="sub">Everything the brief asks for, ready to download.</p>
-        <div class="grid">
-          <a class="card" href="deliverables/tokenisation-explainer-script.pdf"><div class="label">Script</div><div class="name">Script and fact check, PDF</div><div class="info">Every line with its verbatim source</div></a>
-          <a class="card" href="deliverables/tokenisation-explainer-script.docx"><div class="label">Script</div><div class="name">Script and fact check, Word</div><div class="info">Same content, editable</div></a>
-          <a class="card" href="deliverables/tokenisation-explainer-1080p-captions.mp4" download><div class="label">Video</div><div class="name">Final video, captions burned in</div><div class="info">MP4, 1080p, 30 fps</div></a>
-          <a class="card" href="deliverables/tokenisation-explainer-1080p-clean.mp4" download><div class="label">Video</div><div class="name">Final video, clean</div><div class="info">MP4, 1080p, 30 fps</div></a>
-          <a class="card" href="deliverables/tokenisation-explainer.srt" download><div class="label">Subtitles</div><div class="name">SRT file</div><div class="info">26 captions, word synced</div></a>
-          <a class="card" href="deliverables/tokenisation-explainer.vtt" download><div class="label">Subtitles</div><div class="name">WebVTT file</div><div class="info">For web players</div></a>
-          <a class="card" href="licences/README.md"><div class="label">Licences</div><div class="name">Licence register</div><div class="info">Fonts OFL 1.1, voice model Apache 2.0</div></a>
-          <a class="card" href="animation/index.html#play"><div class="label">Project files</div><div class="name">Live animation source</div><div class="info">Plays in the browser, no sound</div></a>
+        <div>
+          <span class="pill"><i></i>Tokenisation explained</span>
+          <h1>From fund to <em>token</em>, in five clear steps.</h1>
+          <p class="lede">How a regulated Australian fund becomes a compliant token on Redbelly Network through Tokeniser. One illustrative fund, 88 seconds, every claim sourced.</p>
+          <div class="cta">
+            <a class="btn btn-mint" href="#film"><svg class="ic" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>Watch the film</a>
+            <a class="btn btn-line" href="deliverables/tokenisation-explainer-script.pdf"><svg class="ic"><use href="#i-doc"/></svg>Read the script</a>
+          </div>
+        </div>
+        <div class="stats" aria-label="At a glance">
+          <div class="stat"><b>88s</b><span>Runtime, 1080p at 30 fps</span></div>
+          <div class="stat"><b>5</b><span>Steps from register to token</span></div>
+          <div class="stat"><b>43</b><span>Verbatim source quotes</span></div>
+          <div class="stat"><b>42/42</b><span>Automated QA checks passed</span></div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
+    <div class="wrap film" id="film">
+      <div class="film-card">
+        <div class="screen">
+          <video id="film-video" controls playsinline preload="metadata" poster="web/poster.jpg">
+            <source src="deliverables/tokenisation-explainer-1080p-captions.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="chapters">
+          <h3>Chapters</h3>
+          <ol id="chapters">
+            <li><button type="button" data-t="0"><time>0:00</time>The fund</button></li>
+            <li><button type="button" data-t="7.25"><time>0:07</time>Today</button></li>
+            <li><button type="button" data-t="12.93"><time>0:13</time>Step 1: Legal review</button></li>
+            <li><button type="button" data-t="23.27"><time>0:23</time>Step 2: Set the rules</button></li>
+            <li><button type="button" data-t="32.69"><time>0:33</time>Step 3: Verify investors</button></li>
+            <li><button type="button" data-t="42.7"><time>0:43</time>Step 4: Issue on Redbelly</button></li>
+            <li><button type="button" data-t="51.05"><time>0:51</time>Step 5: Transfers</button></li>
+            <li><button type="button" data-t="59.8"><time>1:00</time>The Redbelly layer</button></li>
+            <li><button type="button" data-t="77.87"><time>1:18</time>Close</button></li>
+          </ol>
+        </div>
+      </div>
+      <div class="film-bar">
+        <div class="seg" role="group" aria-label="Video version">
+          <button type="button" data-src="deliverables/tokenisation-explainer-1080p-captions.mp4" data-track="" aria-pressed="true">Captions burned in</button>
+          <button type="button" data-src="deliverables/tokenisation-explainer-1080p-clean.mp4" data-track="deliverables/tokenisation-explainer.vtt" aria-pressed="false">Clean with subtitle track</button>
+        </div>
+        <div class="spec">1920 x 1080, 30 fps, H.264, AAC, -16 LUFS. Illustrative example.</div>
+      </div>
+    </div>
+
+    <section id="steps">
       <div class="wrap">
-        <h2>The five steps</h2>
-        <p class="sub">An illustrative Australian wholesale fund, structured as a unit trust, following the process Tokeniser documents in its Knowledge Hub.</p>
+        <p class="eyebrow reveal">How it works</p>
+        <h2 class="reveal">Five steps, from unit register to compliant token</h2>
+        <p class="intro reveal">An illustrative Australian wholesale fund, structured as a unit trust, follows the process Tokeniser documents in its own Knowledge Hub.</p>
         <ol class="steps">
-          <li><div class="num">1</div><div><b>Legal review</b><span>The trust deed is checked to confirm it allows ownership records on chain. The manager's existing licence covers it. There is no separate tokenisation licence.</span></div></li>
-          <li><div class="num">2</div><div><b>Set the rules</b><span>On Tokeniser, the manager sets who can invest, foreign ownership limits and lock-up periods. The rules are written into the token itself.</span></div></li>
-          <li><div class="num">3</div><div><b>Verify investors</b><span>Identity, anti-money laundering screening and investor classification come first. Until then, no tokens can reach their wallet.</span></div></li>
-          <li><div class="num">4</div><div><b>Issue on Redbelly</b><span>Tokens for their units are issued on Redbelly Network into verified wallets. The register is live from the first token.</span></div></li>
-          <li><div class="num">5</div><div><b>Transfers</b><span>Every transfer is checked against the rules first. Break a rule and it is rejected. Pass and it settles in seconds.</span></div></li>
+          <li class="step reveal"><div class="top"><span class="n">1</span><svg class="ic"><use href="#i-scale"/></svg></div><h3>Legal review</h3><p>The trust deed is checked to confirm it allows ownership records on chain. The existing licence covers it, with no separate tokenisation licence.</p></li>
+          <li class="step reveal"><div class="top"><span class="n">2</span><svg class="ic"><use href="#i-rules"/></svg></div><h3>Set the rules</h3><p>On Tokeniser, the manager sets who can invest, foreign ownership limits and lock-up periods. The rules are written into the token.</p></li>
+          <li class="step reveal"><div class="top"><span class="n">3</span><svg class="ic"><use href="#i-user"/></svg></div><h3>Verify investors</h3><p>Identity, anti-money laundering screening and investor classification come first. Until then, no tokens can reach a wallet.</p></li>
+          <li class="step reveal"><div class="top"><span class="n">4</span><svg class="ic"><use href="#i-token"/></svg></div><h3>Issue on Redbelly</h3><p>Tokens for each investor's units are issued on Redbelly Network into verified wallets. The register is live from the first token.</p></li>
+          <li class="step reveal"><div class="top"><span class="n">5</span><svg class="ic"><use href="#i-transfer"/></svg></div><h3>Checked transfers</h3><p>Every transfer is checked against the rules first. Break a rule and it is rejected. Pass and it settles in seconds.</p></li>
         </ol>
       </div>
     </section>
 
-    <section>
+    <section id="downloads">
       <div class="wrap">
-        <h2>How it is checked</h2>
-        <p class="sub">The video, captions and script document are all generated from one script file.</p>
-        <ul class="checks">
-          <li><span class="dot"></span><span>Every claim about Redbelly or Tokeniser is backed by a verbatim quote from the supplied resources.</span></li>
-          <li><span class="dot"></span><span>Captions match the voiceover word for word. On screen text matches the script exactly.</span></li>
-          <li><span class="dot"></span><span>No price talk, investment advice or promises of returns.</span></li>
-          <li><span class="dot"></span><span>Audio at -16 LUFS with a -1.5 dBTP ceiling. Music ducks under every spoken line.</span></li>
-          <li><span class="dot"></span><span>Fonts under the SIL Open Font License, voice model under Apache 2.0, music and graphics original.</span></li>
-          <li><span class="dot"></span><span>Automated QA: 42 of 42 checks pass, including a live re-read of every source quote.</span></li>
-        </ul>
+        <p class="eyebrow reveal">Submission</p>
+        <h2 class="reveal">Everything the brief asks for</h2>
+        <p class="intro reveal">The script for fact checking, both video masters with subtitles, the project files and the licence proof.</p>
+        <div class="groups">
+          <div class="group reveal">
+            <h3>Script</h3>
+            <a class="file primary" href="deliverables/tokenisation-explainer-script.pdf"><span class="tile"><svg class="ic"><use href="#i-doc"/></svg></span><span><b>Script and fact check</b><span>PDF, 257 KB, line by line sources</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+            <a class="file" href="deliverables/tokenisation-explainer-script.docx"><span class="tile"><svg class="ic"><use href="#i-doc"/></svg></span><span><b>Script and fact check</b><span>Word, 44 KB, editable</span></span><svg class="ic go"><use href="#i-down"/></svg></a>
+            <a class="file" href="docs/sources.md"><span class="tile"><svg class="ic"><use href="#i-list"/></svg></span><span><b>Source register</b><span>43 quotes from 13 pages</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="group reveal">
+            <h3>Video</h3>
+            <a class="file primary" href="deliverables/tokenisation-explainer-1080p-captions.mp4" download><span class="tile"><svg class="ic"><use href="#i-film"/></svg></span><span><b>Final video, captions burned in</b><span>MP4, 16.2 MB, 1080p, 30 fps</span></span><svg class="ic go"><use href="#i-down"/></svg></a>
+            <a class="file" href="deliverables/tokenisation-explainer-1080p-clean.mp4" download><span class="tile"><svg class="ic"><use href="#i-film"/></svg></span><span><b>Final video, clean</b><span>MP4, 15.4 MB, 1080p, 30 fps</span></span><svg class="ic go"><use href="#i-down"/></svg></a>
+            <a class="file" href="deliverables/tokenisation-explainer.srt" download><span class="tile"><svg class="ic"><use href="#i-cc"/></svg></span><span><b>Subtitles, SRT</b><span>26 captions, word synced</span></span><svg class="ic go"><use href="#i-down"/></svg></a>
+            <a class="file" href="deliverables/tokenisation-explainer.vtt" download><span class="tile"><svg class="ic"><use href="#i-cc"/></svg></span><span><b>Subtitles, WebVTT</b><span>For web players</span></span><svg class="ic go"><use href="#i-down"/></svg></a>
+          </div>
+          <div class="group reveal">
+            <h3>Project and licences</h3>
+            <a class="file" href="licences/README.md"><span class="tile"><svg class="ic"><use href="#i-shield"/></svg></span><span><b>Licence register</b><span>Fonts OFL 1.1, voice model Apache 2.0</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+            <a class="file" href="docs/qa-report.md"><span class="tile"><svg class="ic"><use href="#i-check"/></svg></span><span><b>QA report</b><span>42 of 42 checks passed</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+            <a class="file" href="animation/index.html#play"><span class="tile"><svg class="ic"><use href="#i-code"/></svg></span><span><b>Live animation source</b><span>Runs in the browser, no sound</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+            <a class="file" href="script/script.md"><span class="tile"><svg class="ic"><use href="#i-list"/></svg></span><span><b>Script source</b><span>Scenes, timings, on screen text</span></span><svg class="ic go"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div class="accuracy" id="accuracy">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow reveal">Accuracy</p>
+          <h2 class="reveal">Accurate by construction</h2>
+          <p class="intro reveal">One script file drives the voiceover, the captions, the animation cues and the script document, so the film cannot drift from what was fact checked.</p>
+          <ul class="checklist reveal">
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Every claim about Redbelly or Tokeniser is tied to a verbatim quote from the supplied resources.</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Captions match the voiceover word for word. On screen text matches the script exactly.</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>No price talk, investment advice or promises of returns.</span></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><span>Fonts and voice model licensed for commercial use. Music and graphics are original.</span></li>
+          </ul>
+          <div class="cta reveal">
+            <a class="btn btn-line" href="docs/sources.md">Source register</a>
+            <a class="btn btn-line" href="docs/qa-report.md">QA report</a>
+          </div>
+        </div>
+        <div class="tiles">
+          <div class="tile-stat reveal"><b>19<small>/19</small></b><span>Voiceover lines with verbatim evidence</span></div>
+          <div class="tile-stat reveal"><b>43</b><span>Quotes re-read on the live pages, all still found</span></div>
+          <div class="tile-stat reveal"><b>13</b><span>Source pages, all from the supplied resources</span></div>
+          <div class="tile-stat reveal"><b>-16</b><span>LUFS loudness, voice first, music ducked under speech</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rb">
+      <div class="wrap">
+        <img src="brand/logos/redbelly-horizontal-negative.svg" alt="Redbelly Network" width="187" height="52">
+        <blockquote>Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol.<cite>tokeniser.com</cite></blockquote>
+        <a class="btn btn-line" href="https://tokeniser.com" rel="noopener">Visit Tokeniser<svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
   </main>
 
-  <div class="rb">
-    <div class="wrap">
-      <img src="brand/logos/redbelly-horizontal-negative.svg" alt="Redbelly Network">
-      <p>Tokeniser operates on Redbelly Network, Australia's public digital token infrastructure, with identity and eligibility built into the protocol.</p>
-    </div>
-  </div>
-
   <footer>
-    <div class="wrap">Illustrative example. General information only, and not financial or legal advice.</div>
+    <div class="wrap">
+      <img src="web/logo-dark.svg" alt="From Fund to Token" width="228" height="28">
+      <p>Illustrative example. General information only, and not financial or legal advice.</p>
+      <nav aria-label="Footer">
+        <a href="deliverables/tokenisation-explainer-script.pdf">Script</a>
+        <a href="docs/sources.md">Sources</a>
+        <a href="licences/README.md">Licences</a>
+      </nav>
+    </div>
   </footer>
 
   <script>
     (function () {
-      var video = document.getElementById('film');
-      var buttons = document.querySelectorAll('.switch button');
-      buttons.forEach(function (b) {
+      var video = document.getElementById('film-video');
+
+      // Chapters: jump and play, and follow along while the film runs.
+      var chapterButtons = Array.prototype.slice.call(document.querySelectorAll('#chapters button'));
+      chapterButtons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          video.currentTime = parseFloat(b.dataset.t) + 0.01;
+          video.play();
+        });
+      });
+      function markChapter() {
+        var t = video.currentTime, current = chapterButtons[0];
+        chapterButtons.forEach(function (b) { if (t >= parseFloat(b.dataset.t)) current = b; });
+        chapterButtons.forEach(function (b) { b.classList.toggle('on', b === current); });
+      }
+      video.addEventListener('timeupdate', markChapter);
+      markChapter();
+
+      // Version switch: captions burned in, or the clean master with a WebVTT track.
+      var versions = document.querySelectorAll('.seg button');
+      versions.forEach(function (b) {
         b.addEventListener('click', function () {
           if (b.getAttribute('aria-pressed') === 'true') return;
-          buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          versions.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
           var t = video.currentTime, playing = !video.paused;
           var old = video.querySelector('track');
           if (old) old.remove();
@@ -180,6 +423,14 @@
           });
         });
       });
+
+      // Gentle reveal as sections scroll into view.
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>

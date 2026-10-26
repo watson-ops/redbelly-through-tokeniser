@@ -8,3 +8,5 @@ soundfile
 python-docx
 # spaCy English model used by misaki for pronunciation:
 # pip install --no-deps https://huggingface.co/spacy/en_core_web_sm/resolve/main/en_core_web_sm-any-py3-none-any.whl
+# Only for rebuilding the web logo (tools/build_logo.py):
+# fonttools brotli uharfbuzz

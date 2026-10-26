@@ -19,6 +19,7 @@ These are original to this repository, so no third party licence applies. Their 
 |-------|--------|
 | Music bed and transition sounds | Synthesised from sine waves and filtered noise by [`tools/build_music.py`](../tools/build_music.py) |
 | Icons, token, illustrations | Hand written SVG paths in [`animation/scenes.js`](../animation/scenes.js) |
+| Project logo (`web/logo-light.svg`, `web/logo-dark.svg`, `web/mark.svg`) | Token mark drawn for this project. Wordmark outlined from Readex Pro, which the SIL Open Font License 1.1 allows. Built by [`tools/build_logo.py`](../tools/build_logo.py) |
 | Animation | HTML, CSS and JavaScript in [`animation/`](../animation/) |
 | Script and captions | [`script/`](../script/) and [`tools/build_subtitles.py`](../tools/build_subtitles.py) |
 
