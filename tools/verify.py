@@ -29,7 +29,7 @@ EMOJI = re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF]")
 HYPE = re.compile(r"\b(elevate|seamless(ly)?|unleash|revolutioni[sz]e|game.?changer|moon|to the moon|skyrocket)\b", re.I)
 MONEY = re.compile(r"(\$|\bA\$|\bUS\$|\bprice[sd]?\b|\breturns?\b|\byields?\b|\bprofits?\b|\bgains?\b|\bAPY\b|\bguarantee[sd]?\b|"
                    r"\bbuy now\b|\binvest now\b|\bROI\b|\bupside\b|\bprofitable\b|\bearn\b|\binterest rate\b|\d+\s?%)", re.I)
-CREDIT = re.compile(r"(watson|made by|created by|produced by|animated by|voiced by|directed by|@[a-z0-9_]{2,}|github\.com/)", re.I)
+CREDIT = re.compile(r"(made by|created by|produced by|animated by|voiced by|directed by|designed by|@[a-z0-9_]{2,}|github\.com/)", re.I)
 
 results = []
 
